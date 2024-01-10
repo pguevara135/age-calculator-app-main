@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap');
+
+:root {
+    --Purple: hsl(259, 100%, 65%);
+    --Light-red: hsl(0, 100%, 67%);
+    --White: hsl(0, 0%, 100%);
+    --Off-white: hsl(0, 0%, 94%);
+    --Light-grey: hsl(0, 0%, 86%);
+    --Smokey-grey: hsl(0, 1%, 44%);
+    --Off-black: hsl(0, 0%, 8%);
+    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--Off-white);
+}
+
+.container {
+    width: 90%;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.date {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding-top: 2rem;
+}
+
+.date form {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1.5rem;
+}
+
+.info p {
+    width: 5rem;
+    color: var(--Smokey-grey);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: .6rem;
+    letter-spacing: .2rem;
+    padding-bottom: .5rem;
+}
+
+form input {
+    width: 85px;
+    height: 64px;
+    padding-left: .7rem;
+    border-radius: 5px;
+    border: 1px solid var(--Light-grey);
+    color: var(--Off-black);
+    font-weight: 800;
+    font-size: 1rem;
+    outline: none;
+}
+
+form input::placeholder {
+    font-weight: 800;
+    font-size: 32px;
+}
+
+.div{
+    width: 100%;
+    height: 8rem;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.div hr {
+    width: 100%;
+    border: 1px solid var(--Off-white);
+    position: absolute;
+    top: 45%;
+}
+
+.div img {
+    width: 60px;
+    background-color: var(--Purple);
+    border-radius: 50%;
+    padding: 1.2rem;
+}
+
+.result {
+    width: 100%;
+    font-size: 3rem;
+    color: var(--Off-black);
+}
+
+.age_data {
+    color: var(--Purple);
+    font-weight: 800;
+    font-size: 32px;
+}
