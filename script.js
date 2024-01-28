@@ -8,7 +8,7 @@ const dia = String(data.getDate()).padStart(2, '0')
 const mes = String(data.getMonth() + 1).padStart(2, '0')
 const ano = data.getFullYear()
 
-// Validate if fields are empty
+//? Validate if fields are empty
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -18,6 +18,8 @@ form.addEventListener("submit", (event) => {
     validateYear();
     calculateYears()
 })
+
+//?Day Validation
 
 function validateDay() {
     var error = document.getElementById("error-day")
@@ -29,6 +31,8 @@ function validateDay() {
     }
 }
 
+//? Month validation
+
 function validateMonth() {
     var error = document.getElementById('error-month')
     const monthColor = document.getElementById('label-month')
@@ -39,6 +43,8 @@ function validateMonth() {
     }
 }
 
+//? Year Validation
+
 function validateYear() {
     var error = document.getElementById('error-year');
     var yearColor = document.getElementById('label-year');
@@ -48,6 +54,8 @@ function validateYear() {
         yearColor.className = 'error';
     }
 }
+
+//? Clear error MSG to clean fields
 
 function redefinirMsg() {
     var errorDay = document.getElementById("error-day");
