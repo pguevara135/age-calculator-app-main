@@ -48,6 +48,7 @@ body {
     font-size: .5rem;
     letter-spacing: .1rem;
     color: var(--Smokey-grey);
+    border: 1px solid teal;
 }
 
 .dados {
@@ -72,8 +73,22 @@ body {
 }
 
 input:focus {
-    border: 1px solid var(--Light-red);
+    border: 1px solid var(--Purple);
+    outline: none;
     cursor: pointer;
+}
+
+input:invalid {
+    border-color: var(--Light-red);
+    box-shadow: 0px 0px 4px var(--Light-red);
+}
+
+#error-day, #error-month, #error-year {
+    width: 100%;
+    font-size: .4rem;
+    color: var(--Light-red);
+    letter-spacing: normal;
+    text-transform: initial;
 }
 
 .separator {
@@ -127,4 +142,8 @@ button:active {
 .result {
     font-weight: 800;
     font-size: 3.4rem;
+}
+
+.error {
+    color: var(--Light-red);
 }

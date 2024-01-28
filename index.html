@@ -19,16 +19,19 @@
   <div class="date">
     <form action="" method="post" class="dados" id="form">
       <label for="day" class="info">
-        <p class="label">day</p>
-        <input type="number" name="day" id="day" min="1" max="31" placeholder="DD">
+        <p id="label-day">day</p>
+        <input type="number" name="day" id="day" min="1" max="31" placeholder="DD" onblur="validateDay()" onfocus="redefinirMsg()">
+        <span id="error-day"></span>
       </label>
       <label for="month" class="info">
-        <p class="label">month</p>
-        <input type="number" name="month" id="month" min="1" max="12" placeholder="MM">
+        <p id="label-month">month</p>
+        <input type="number" name="month" id="month" min="1" max="12" placeholder="MM" onblur="validateMonth()" onfocus="redefinirMsgMonth()">
+        <span id="error-month"></span>
       </label>
       <label for="year" class="info">
-        <p class="label">year</p>
-        <input type="number" name="year" id="year" min="0" max="2024" placeholder="YYYY">
+        <p id="label-year">year</p>
+        <input type="number" name="year" id="year" min="0" max="2024" placeholder="YYYY" onblur="validateYear()" onfocus="redefinirMsgYear()">
+        <span id="error-year"></span>
       </label>
       <div class="separator">
         <div class="traco"></div>
