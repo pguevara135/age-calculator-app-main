@@ -21,7 +21,7 @@ body {
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
     text-decoration: none;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -30,78 +30,56 @@ body {
 }
 
 .container {
-    width: 90%;
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 1rem;
-    box-sizing: border-box;
+    width: 450px;
+    max-width: 750px;
+    margin: auto;
+    background-color: var(--White);
+    padding: 2rem;
     border-radius: 20px 20px 100px 20px;
+    box-sizing: border-box;
 }
 
 .date {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding-top: 2rem;
-}
-
-.date form {
-    display: flex;
-    justify-content: space-evenly;
-    gap: 1.5rem;
-}
-
-.info p {
-    width: 5rem;
-    color: var(--Smokey-grey);
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: .6rem;
-    letter-spacing: .2rem;
-    padding-bottom: .5rem;
-}
-
-form label {
-    text-transform: uppercase;
-}
-
-form input {
-    width: 85px;
-    height: 64px;
-    padding-left: 1rem;
-    border-radius: 5px;
-    border: 1px solid var(--Light-grey);
-    color: var(--Off-black);
-    font-weight: 800;
-    font-size: 1.2rem;
-    outline: none;
-}
-
-form input::placeholder {
-    font-weight: 800;
-    font-size: 1.2rem;
-}
-
-form input:focus {
-    border: 1px solid var(--Purple);
-    color: black;
-    font-size: 1.2rem;
-}
-
-.div{
     width: 100%;
-    height: 8rem;
-    margin-bottom: 3rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
 }
 
-.div button {
-    border: none;
-    background-color: #fff;
+.info {
+    text-transform: uppercase;
+    font-size: .5rem;
+    letter-spacing: .1rem;
+    color: var(--Smokey-grey);
+}
+
+.dados {
+    width: 90%;
+    display: flex;
+    gap: 1rem;
+}
+
+.dados input {
+    width: 5rem;
+    padding: .5rem;
+    border: 1px solid var(--Light-grey);
+    font-weight: 800;
+    outline: none;
+    cursor: pointer;
+}
+
+.dados input::placeholder {
+    font-weight: 400i;
+    color: var(--Smokey-grey);
+    font-size: 1.05rem;
+}
+
+input:focus {
+    border: 1px solid var(--Light-red);
+    cursor: pointer;
+}
+
+.separator {
+    width: 100%;
+    height: 60px;
+    position: relative;
 }
 
 .traco {
@@ -109,33 +87,44 @@ form input:focus {
     border: 1px solid var(--Light-grey);
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    right: 50%;
+    transform: translate(50%, -50%);
 }
 
-.botao {
+.botao button {
+    width: 3rem;
+    background-color: var(--Purple);
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    padding: 1rem;
+    position: absolute;
+    top: 50%;
+    right: 24px;
+    transform: translate(50%, -50%);
     cursor: pointer;
 }
 
-.div img {
-    width: 70px;
-    background-color: var(--Purple);
-    border-radius: 50%;
-    padding: 1.2rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+button:active {
+    border: none;
+    outline: none;
 }
 
-.result {
+.botao button:hover {
+    background-color: var(--Off-black);
+}
+
+.botao img {
     width: 100%;
-    font-size: 3rem;
-    color: var(--Off-black);
 }
 
 .age_data {
     color: var(--Purple);
     font-weight: 800;
-    font-size: 32px;
+    font-size: 3rem;
+}
+
+.result {
+    font-weight: 800;
+    font-size: 3.4rem;
 }

@@ -17,7 +17,7 @@
 <body>
 <main class="container">
   <div class="date">
-    <form action="" method="post">
+    <form action="" method="post" class="dados" id="form">
       <label for="day" class="info">
         <p class="label">day</p>
         <input type="number" name="day" id="day" min="1" max="31" placeholder="DD">
@@ -30,18 +30,18 @@
         <p class="label">year</p>
         <input type="number" name="year" id="year" min="0" max="2024" placeholder="YYYY">
       </label>
+      <div class="separator">
+        <div class="traco"></div>
+        <div class="botao">
+          <a href="#">
+            <button type="submit">
+              <img src="assets/images/icon-arrow.svg" alt="">
+            </button>
+          </a>
+        </div>
+      </div>
     </form>
-
   </div>
-  <div class="div">
-    <div class="traco"></div>
-    <div class="botao">
-      <button>
-        <img src="assets/images/icon-arrow.svg" alt="">
-      </button>
-    </div>
-  </div>
-
   <div class="result">
     <p> <span class="age age_data">- -</span> years</p>
     <p><span class="age_month age_data">- -</span> months</p>
