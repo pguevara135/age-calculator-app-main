@@ -1,12 +1,25 @@
-const form = document.querySelector("#form")
-const day = document.getElementById("day");
-const month = document.getElementById("month");
-const year = document.getElementById('year');
-const data = new Date()
 
-const dia = String(data.getDate()).padStart(2, '0')
-const mes = String(data.getMonth() + 1).padStart(2, '0')
-const ano = data.getFullYear()
+// ! Input
+
+let form = document.querySelector("#form")
+let day = document.getElementById("day");
+let month = document.getElementById("month");
+let year = document.getElementById('year');
+
+//! Take date from computer
+
+let date = new Date()
+let dia = date.getDate();
+let mes = 1 + date.getMonth();
+let ano = date.getFullYear()
+
+const months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+//! Output
+
+const yearOtp = document.getElementById('age');
+const monthOtp = document.getElementById('age_month');
+const dayOtp = document.getElementById('age_days');
 
 //? Validate if fields are empty
 
@@ -16,7 +29,12 @@ form.addEventListener("submit", (event) => {
     validateDay();
     validateMonth();
     validateYear();
-    calculateYears()
+
+    if(validateDay() && validateMonth() && validateYear()) {
+        calculateYears()
+    } else {
+        alert('Field is required')
+    }
 })
 
 //?Day Validation
@@ -24,23 +42,36 @@ form.addEventListener("submit", (event) => {
 function validateDay() {
     var error = document.getElementById("error-day")
     const dayColor = document.getElementById('label-day')
+    let validator = true
 
     if(day.value == "") {
         error.innerHTML = "This field is required"
         dayColor.className = 'error'
+        validator = false
     }
+
+    return validator
 }
 
 //? Month validation
 
 function validateMonth() {
     var error = document.getElementById('error-month')
-    const monthColor = document.getElementById('label-month')
+    const monthColor = document.getElementById('label-month');
+    let validatorMonth = true
 
     if(month.value == "") {
         error.innerHTML = 'This field is required';
         monthColor.className = 'error'
+        validatorMonth = false
     }
+    if(month.value > 12) {
+        error.innerHTML = 'Must be a valid month'
+        monthColor.className = 'error';
+        validatorMonth = false
+    }
+
+    return validatorMonth
 }
 
 //? Year Validation
@@ -48,11 +79,14 @@ function validateMonth() {
 function validateYear() {
     var error = document.getElementById('error-year');
     var yearColor = document.getElementById('label-year');
+    let validator = true;
 
     if(year.value == "") {
         error.innerHTML = "This field is required";
         yearColor.className = 'error';
+        validator = false
     }
+    return validator
 }
 
 //? Clear error MSG to clean fields
@@ -88,10 +122,24 @@ function redefinirMsgYear() {
 }
 
 function calculateYears() {
-    var idadeAnos = ano - year.value;
-    var idadeMeses = mes - month.value;
-    var idadeDias = dia - day.value;
-
     
+    if(day.value > dia) {
+        dia = dia + months[mes - 1];
+        mes = mes - 1;
+    }
 
+    if(month.value > mes) {
+        mes = mes + 12;
+        console.log(mes)
+        ano = ano - 1;
+    }
+
+    const d = dia - day.value;
+    const m = mes - month.value;
+    const y = ano - year.value
+
+
+    dayOtp.innerHTML = d;
+    monthOtp.innerHTML = m;
+    yearOtp.innerHTML = y;
 }
