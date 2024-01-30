@@ -48,18 +48,18 @@ body {
     font-size: .5rem;
     letter-spacing: .1rem;
     color: var(--Smokey-grey);
-    border: 1px solid teal;
 }
 
 .dados {
     width: 90%;
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
 }
 
 .dados input {
     width: 5rem;
-    padding: .5rem;
+    padding: .5rem 0 .5rem .5rem ;
     border: 1px solid var(--Light-grey);
     font-weight: 800;
     outline: none;
@@ -146,4 +146,42 @@ button:active {
 
 .error {
     color: var(--Light-red);
+}
+
+@media screen and (max-width: 375px) {
+    .container {
+        width: 90%;
+    }
+
+    .info {
+        width: 4.2rem;
+    }
+
+    .dados input {
+        width: 4.2rem;
+        padding: .5rem 0 .5rem .5rem ;
+        border: 1px solid var(--Light-grey);
+        font-weight: 800;
+        outline: none;
+        cursor: pointer;
+    }
+
+    .botao button {
+        width: 3rem;
+        background-color: var(--Purple);
+        border-radius: 50%;
+        border: none;
+        outline: none;
+        padding: 1rem;
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translate(50%, -50%);
+        cursor: pointer;
+    }
+
+    .result {
+        font-weight: 800;
+        font-size: 3rem;
+    }
 }
